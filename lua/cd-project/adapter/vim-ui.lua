@@ -1,4 +1,5 @@
 local api = require("cd-project.api")
+local config = require("cd-project.config"
 local function logErr(msg)
 	vim.notify(msg, vim.log.levels.ERROR, { title = "cd-project.nvim" })
 end
@@ -12,6 +13,9 @@ local function cd_project()
 			return logErr("Must select a valid dir")
 		end
 		api.cd_project(dir)
+		if config.config.verbose then
+			vim.notify("\nSwitched to dir: " .. dir)
+		end
 	end)
 end
 

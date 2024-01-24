@@ -9,6 +9,8 @@ local default_config = {
 	projects_config_filepath = vim.fs.normalize(vim.fn.stdpath("config") .. "/cd-project.nvim.json"),
 	-- this controls the behaviour of `CdProjectAdd` command about how to get the project directory
 	project_dir_pattern = { ".git", ".gitignore", "Cargo.toml", "package.json", "go.mod" },
+	-- controls if notification should be shown upon project switch
+	verbose = false
 	hooks = {
 		{
 			callback = function(dir)
